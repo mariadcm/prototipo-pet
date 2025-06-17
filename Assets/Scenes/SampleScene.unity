@@ -278,7 +278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -340, y: 223}
+  m_AnchoredPosition: {x: -300, y: 96}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &477216066
@@ -602,7 +602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -504, y: -230}
+  m_AnchoredPosition: {x: -284, y: -25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &527846073
@@ -677,7 +677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.5, y: -215.6}
+  m_AnchoredPosition: {x: 45.700012, y: -108}
   m_SizeDelta: {x: 173.8612, y: 51.6191}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &580154118
@@ -956,7 +956,7 @@ MonoBehaviour:
   botaoAgua: {fileID: 2054871855}
   botaoRemedio: {fileID: 580154120}
   textoCertificado: {fileID: 519440218}
-  mascoteImagem: {fileID: 1465522308}
+  mascoteImagem: {fileID: 358533753}
   mascoteTriste: {fileID: 2889580193396966139, guid: 55a817f8367d3894e8ff54bf408507b0, type: 3}
   mascoteFeliz: {fileID: -4908457557486488612, guid: e07fe32bb0038344bb3a5f078f5c3313, type: 3}
 --- !u!4 &726803483
@@ -1384,7 +1384,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -312.2, y: -215.6}
+  m_AnchoredPosition: {x: -284, y: -108}
   m_SizeDelta: {x: 227.6941, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1002658549
@@ -1941,7 +1941,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 342.9, y: -220}
+  m_AnchoredPosition: {x: 371.1, y: -112.399994}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2054871853
