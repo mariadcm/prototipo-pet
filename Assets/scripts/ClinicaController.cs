@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -9,6 +10,8 @@ public class ClinicaController : MonoBehaviour
     public Button botaoComida;
     public Button botaoAgua;
     public Button botaoRemedio;
+    public Button botaoRemedioErrado;
+    public Button botaoEscuro;
     public TextMeshProUGUI textoCertificado;
     public SpriteRenderer mascoteImagem;
     public Sprite mascoteTriste;
@@ -20,7 +23,7 @@ public class ClinicaController : MonoBehaviour
 
 
     void Start()
-    {
+    { 
         //mascoteImagem= GetComponent<SpriteRenderer>();
         
         barraSaude.maxValue = saudeMax;
@@ -31,6 +34,9 @@ public class ClinicaController : MonoBehaviour
         botaoComida.onClick.AddListener(() => Cuidar(10f));
         botaoAgua.onClick.AddListener(() => Cuidar(5f));
         botaoRemedio.onClick.AddListener(() => Cuidar(15f));
+        botaoRemedioErrado.onClick.AddListener(() => Castigar(25f));
+        botaoEscuro      .onClick.AddListener(() => CastigarEscuro(20f));
+
     }
 
     void Update()
@@ -81,7 +87,37 @@ public class ClinicaController : MonoBehaviour
         textoCertificado.text = "Parabéns! Você cuidou muito bem do seu amiguinho!";
         textoCertificado.gameObject.SetActive(true);
     }
-}
+    void Castigar(float valor)
+    {
+        saude = Mathf.Max(saude - valor, 0f);
+        barraSaude.value = saude;
+        AtualizarEstadoMascote();
+        Debug.Log($"Mascote perdeu {valor} de saúde (castigo). Saúde agora: {saude}");
+    }
+
+    void CastigarEscuro(float valor)
+    {
+        // Diminui a saúde
+        saude = Mathf.Max(saude - valor, 0f);
+        barraSaude.value = saude;
+        AtualizarEstadoMascote();
+        Debug.Log($"Mascote ficou no escuro e perdeu {valor} de saúde. Saúde agora: {saude}");
+
+        // Efeito de escuro: pisca um painel ou altera a cor da cena
+        StartCoroutine(FlashEscuro());
+    }
+
+    IEnumerator FlashEscuro()
+    {
+        GameObject painel = GameObject.Find("PainelEscuro");
+        if (painel != null)
+        {
+            painel.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            painel.SetActive(false);
+        }
+    }
+
 
 
 
