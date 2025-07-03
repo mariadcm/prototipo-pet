@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -23,9 +23,9 @@ public class ClinicaController : MonoBehaviour
 
 
     void Start()
-    { 
+    {
         //mascoteImagem= GetComponent<SpriteRenderer>();
-        
+
         barraSaude.maxValue = saudeMax;
         barraSaude.value = saude;
         textoCertificado.gameObject.SetActive(false);
@@ -37,19 +37,20 @@ public class ClinicaController : MonoBehaviour
         botaoRemedioErrado.onClick.AddListener(() => Castigar(25f));
         botaoEscuro      .onClick.AddListener(() => CastigarEscuro(20f));
 
+
     }
 
     void Update()
     {
-        
+
         if (saude >= (saudeMax / 2))
         {
             mascoteImagem.sprite = mascoteFeliz;
-           
+
         }
         else
             mascoteImagem.sprite = mascoteTriste;
-    
+
     }
 
 
@@ -69,23 +70,6 @@ public class ClinicaController : MonoBehaviour
         {
             MostrarCertificado();
         }
-    }
-
-
-    void AtualizarEstadoMascote()
-    {
-        Debug.Log("atualizando o estado do mascote de triste para feliz ");
-        if (saude >= saudeMax / 2)
-            mascoteImagem.sprite = mascoteFeliz;
-        else
-            mascoteImagem.sprite = mascoteTriste;
-    }
-
-
-    void MostrarCertificado()
-    {
-        textoCertificado.text = "Parabéns! Você cuidou muito bem do seu amiguinho!";
-        textoCertificado.gameObject.SetActive(true);
     }
     void Castigar(float valor)
     {
@@ -109,14 +93,37 @@ public class ClinicaController : MonoBehaviour
 
     IEnumerator FlashEscuro()
     {
+        // Crie um GameObject UI > Panel, renomeie para "PainelEscuro"
+        // e deixe-o desativado no início (SetActive(false)).
         GameObject painel = GameObject.Find("PainelEscuro");
         if (painel != null)
         {
             painel.SetActive(true);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f);  // escuro por 1 segundo
             painel.SetActive(false);
         }
     }
+
+
+
+    void AtualizarEstadoMascote()
+    {
+        Debug.Log("atualizando o estado do mascote de triste para feliz ");
+        if (saude >= saudeMax / 2)
+            mascoteImagem.sprite = mascoteFeliz;
+        else
+            mascoteImagem.sprite = mascoteTriste;
+    }
+
+
+    void MostrarCertificado()
+    {
+        textoCertificado.text = "Parabéns! Você cuidou muito bem do seu amiguinho!";
+        textoCertificado.gameObject.SetActive(true);
+    }
+}
+
+    
 
 
 
